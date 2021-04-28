@@ -45,11 +45,15 @@ Use the copy function below to do the following:
     2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/){
     /*your code here*/
-}    
 
+    function copy (array) {
+      let arrayCopy = array;
+      return arrayCopy;  
 
+    }
+   
+    copy(originalFlavors)
 
 
 
@@ -64,9 +68,14 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
-   /*your code here*/
+function is31Flavors(array){
+   if(array.length === 31){
+       return true
+   } else {
+       return false
+   };
 }
+is31Flavors(originalFlavors);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -74,16 +83,22 @@ Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They 
 Use the addFlavor function below to do the following:
     1. Receive an array
     2. Receive a new flavor as a string
-    3. The function adds the passed flavor to the front of the passed array
+    3. The function adds the passed flavor to the front of the past array
     4. The function should return the resulting array
 
     For example: addFlavor(originalFlavors, "Rainbow Sherbert") should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
 
 
-function addFlavor(/*your code here*/){
-   /*your code here*/
-}
+function addFlavor(flavorArr, addedFlavor){
+    let icecreamArray = flavorArr
+    let newFlavor = addedFlavor;
+    icecreamArray.unshift(newFlavor);
+    return icecreamArray;
+    }
+    addFlavor(originalFlavors, "Rainbow Sherbert");
+    
+
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -97,10 +112,12 @@ Use the removeLastFlavor function below to do the following:
     For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
-   /*your code here*/
+function removeLastFlavor(originalFlavors){
+    let originalFlavorsRemove = originalFlavors.pop();
+    return originalFlavorsRemove;
 }
-
+removeLastFlavor(originalFlavors);
+console.log(originalFlavors);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -114,9 +131,12 @@ Use the getFlavorByIndex function below to do the following:
     For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-    /*your code here*/
-}
+function getFlavorByIndex(originalFlavors){
+    let newOriginalFlavorsArr = originalFlavors;
+    return newOriginalFlavorsArr[2];
+   
+  }
+  getFlavorByIndex(originalFlavors)
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -134,10 +154,12 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-    /*your code here*/
+function removeFlavorByName(originalFlavors){
+    let flavorIndex = originalFlavors.indexOf('Rocky Road');// searches index in original array.
+    let shortenedArray = originalFlavors.splice(flavorIndex,1);//removes flavor from array, using the index.
+    return shortenedArray;
 }
-
+removeFlavorByName(originalFlavors)
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -160,10 +182,13 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-    /*your code here*/
+function filterByWord(originalFlavors){
+    let containString = originalFlavors.includes('chocolate')
+    if (containString){
+        return originalFlavors.includes('chocolate')
+    }
 }
-
+//array for loop.  .length, if, then statement. string.includes. array.push(string)
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
@@ -177,8 +202,8 @@ Use the getAverageWordLength function below to do the following:
     For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-    /*code here*/
+function getAverageWordLength(originalFlavors){
+    
 }
 
 
